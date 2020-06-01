@@ -32,8 +32,8 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <!-- <addClasspath>true</addClasspath> -->
-                            <!--                            <mainClass>ru.mg.App</mainClass>-->
+                            <addClasspath>true</addClasspath>
+                            <mainClass>ru.arl.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
