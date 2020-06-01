@@ -33,7 +33,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>ru.arl.App</mainClass>
+                            <mainClass>ru.arl.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
