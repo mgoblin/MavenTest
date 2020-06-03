@@ -22,7 +22,7 @@ public class TestTicTacToe {
 
     @Test
     public void testIsCellValid() {
-        assertEquals(isCellValid(0, 0), false);
+        assertFalse(isCellValid(0, 0));
     }
 
 //    @Test
