@@ -38,22 +38,5 @@ public class TestTicTacToe {
         }
     }
 
-//    @Test
-//    public void TestPrintMap() {
-//        setSIZE(1);
-//        initMap();
-//        printMap();
-//        String[][] expectedGrid = new String[1][1];
-//        expectedGrid[0][0] = "0";
-//        expectedGrid[0][1] = "1";
-//        expectedGrid[1][0] = "1";
-//        expectedGrid[1][1] = "•";
-//
-//        for (int row = 0; row < SIZE; row++) {
-//            for (int column = 0; column < SIZE; column++) {
-//                assertEquals(printMap()[row][column], DOT_EMPTY);
-//            }
-//        }
-//    }
 }
 
