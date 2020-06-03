@@ -30,7 +30,7 @@ public class TestTicTacToe {
         map = new char[2][2];
         map[1][1] = DOT_X;
 
-        assertEquals(isCellValid(1, 1), false);
+        assertFalse(isCellValid(1, 1));
     }
 
 //    @Test
