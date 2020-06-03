@@ -34,7 +34,7 @@ public class TestTicTacToe {
 
             assertFalse(isCellValid(1, 1));
         } finally {
-            setSIZE(0);
+            setSIZE(SIZE);
         }
     }
 
