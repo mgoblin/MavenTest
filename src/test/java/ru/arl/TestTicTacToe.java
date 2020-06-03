@@ -13,10 +13,15 @@ public class TestTicTacToe {
     @Test
     public void testInitMap() {
         TicTacToe.initMap();
-        for (int row = 0; row < SIZE; row++) {
-            for (int column = 0; column < SIZE; column++) {
-                assertEquals(map[row][column], DOT_EMPTY);
+        try {
+            setSIZE(3);
+            for (int row = 0; row < SIZE; row++) {
+                for (int column = 0; column < SIZE; column++) {
+                    assertEquals(map[row][column], DOT_EMPTY);
+                }
             }
+        } finally {
+            setSIZE(SIZE);
         }
     }
 
