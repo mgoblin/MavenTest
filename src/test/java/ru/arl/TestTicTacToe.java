@@ -2,9 +2,8 @@ package ru.arl;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static ru.arl.TicTacToe.*;
 
 public class TestTicTacToe {
@@ -12,9 +11,9 @@ public class TestTicTacToe {
 
     @Test
     public void testInitMap() {
-        TicTacToe.initMap();
         try {
             setSIZE(3);
+            TicTacToe.initMap();
             for (int row = 0; row < SIZE; row++) {
                 for (int column = 0; column < SIZE; column++) {
                     assertEquals(map[row][column], DOT_EMPTY);
