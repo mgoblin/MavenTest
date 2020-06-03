@@ -38,5 +38,12 @@ public class TestTicTacToe {
         }
     }
 
+    @Test
+    public void testGetSetSize() {
+        int b = 0;
+        setSIZE(b);
+        int a = getSIZE();
+        assertEquals(a, b);
+    }
 }
 
