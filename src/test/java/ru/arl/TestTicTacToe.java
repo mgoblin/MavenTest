@@ -11,7 +11,7 @@ public class TestTicTacToe {
     private static final int SIZE = getSIZE();
 
     @Test
-    public void test1InitMap() {
+    public void testInitMap() {
         TicTacToe.initMap();
         for (int row = 0; row < SIZE; row++) {
             for (int column = 0; column < SIZE; column++) {
