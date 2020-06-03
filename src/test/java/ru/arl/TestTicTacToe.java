@@ -28,11 +28,14 @@ public class TestTicTacToe {
     @Test
     public void testPlaceFull() {
         setSIZE(5);
-        map = new char[2][2];
-        map[1][1] = DOT_X;
+        try {
+            map = new char[2][2];
+            map[1][1] = DOT_X;
 
-        assertFalse(isCellValid(1, 1));
-        setSIZE(0);
+            assertFalse(isCellValid(1, 1));
+        } finally {
+            setSIZE(0);
+        }
     }
 
 //    @Test
