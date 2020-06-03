@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TicTacToe {
-    public static int SIZE = 5;
+    private static int SIZE;
     public static final char DOT_EMPTY = '•';
     public static final char DOT_X = 'X';
     public static final char DOT_O = 'O';
@@ -12,32 +12,17 @@ public class TicTacToe {
     public static Scanner sc = new Scanner(System.in);
     public static Random rand = new Random();
 
+
+    public static int getSIZE() {
+        return SIZE;
+    }
+    public static void setSIZE(int SIZE) {
+        TicTacToe.SIZE = SIZE;
+    }
+
+
     public static void main(String[] args) {
-        initMap();
-        printMap();
-        while (true) {
-            humanTurn();
-            printMap();
-            if (checkWin(DOT_X)) {
-                System.out.println("Победил человек");
-                break;
-            }
-            if (isMapFull()) {
-                System.out.println("Ничья");
-                break;
-            }
-            aiTurn();
-            printMap();
-            if (checkWin(DOT_O)) {
-                System.out.println("Победил Искуственный Интеллект");
-                break;
-            }
-            if (isMapFull()) {
-                System.out.println("Ничья");
-                break;
-            }
-        }
-        System.out.println("Игра закончена");
+        GameLogic.game(1);
     }
 
     static boolean checkWin(char dot) { //проверка победы
@@ -119,13 +104,13 @@ public class TicTacToe {
 
     public static void printMap() {
         for (int i = 0; i <= SIZE; i++) {
-            System.out.print(i + " ");
+            System.out.print(i + " "); //печать горизонтальных чисел
         }
         System.out.println();
         for (int i = 0; i < SIZE; i++) {
-            System.out.print((i + 1) + " ");
+            System.out.print((i + 1) + " "); //печать вертикальных чисел
             for (int j = 0; j < SIZE; j++) {
-                System.out.print(map[i][j] + " ");
+                System.out.print(map[i][j] + " "); //печать инициализированных элементов массива
             }
             System.out.println();
         }
