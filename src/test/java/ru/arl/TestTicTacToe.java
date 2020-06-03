@@ -25,13 +25,13 @@ public class TestTicTacToe {
         assertFalse(isCellValid(0, 0));
     }
 
-//    @Test
-//    public void TestPlaceFull() {
-//        map = new char[0][0];
-//        map[1][1]=DOT_X;
-//
-//        assertEquals(isCellValid(1,1),false);
-//    }
+    @Test
+    public void testPlaceFull() {
+        map = new char[2][2];
+        map[1][1] = DOT_X;
+
+        assertEquals(isCellValid(1, 1), false);
+    }
 
 //    @Test
 //    public void TestPrintMap() {
