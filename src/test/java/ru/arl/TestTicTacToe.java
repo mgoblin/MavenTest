@@ -27,8 +27,8 @@ public class TestTicTacToe {
 
     @Test
     public void testPlaceFull() {
-        setSIZE(5);
         try {
+            setSIZE(5);
             map = new char[2][2];
             map[1][1] = DOT_X;
 
