@@ -2,8 +2,7 @@ package ru.arl;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 import static ru.arl.TicTacToe.*;
 
 public class TestTicTacToe {
@@ -26,7 +25,12 @@ public class TestTicTacToe {
 
     @Test
     public void testIsCellValid() {
-        assertFalse(isCellValid(0, 0));
+        try {
+            setSIZE(3);
+            assertFalse(isCellValid(0, 0));
+        } finally {
+            setSIZE(SIZE);
+        }
     }
 
     @Test
@@ -51,5 +55,121 @@ public class TestTicTacToe {
             setSIZE(SIZE);
         }
     }
+
+    @Test
+    public void testMapIsNotFull() {
+        try {
+            setSIZE(1);
+            initMap();
+            assertFalse(isMapFull());
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+    @Test
+    public void testIsMapFull() {
+        try {
+            setSIZE(1);
+            initMap();
+            map[0][0] = DOT_X;
+            assertTrue(isMapFull());
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+    @Test
+    public void testCheckWinGor() {
+        try {
+            setSIZE(2);
+            initMap();
+            map[0][0] = DOT_X;
+            map[0][1] = DOT_X;
+            assertTrue(checkWin(DOT_X));
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+    @Test
+    public void testCheckWinVert() {
+        try {
+            setSIZE(2);
+            initMap();
+            map[0][0] = DOT_X;
+            map[1][0] = DOT_X;
+            assertTrue(checkWin(DOT_X));
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+    @Test
+    public void testCheckWinDiag1() {
+        try {
+            setSIZE(2);
+            initMap();
+            map[0][0] = DOT_X;
+            map[1][1] = DOT_X;
+            assertTrue(checkWin(DOT_X));
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+    @Test
+    public void testCheckWinDiag2() {
+        try {
+            setSIZE(2);
+            initMap();
+            map[0][1] = DOT_X;
+            map[1][0] = DOT_X;
+            assertTrue(checkWin(DOT_X));
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+    @Test
+    public void testCheckWinFalse() {
+        try {
+            setSIZE(2);
+            initMap();
+            map[0][1] = DOT_X;
+            map[1][0] = DOT_X;
+            assertFalse(checkWin(DOT_O));
+        } finally {
+            setSIZE(SIZE);
+        }
+    }
+
+
+//    @Test
+//    public void test () {
+//        try {
+//
+//        } finally {
+//
+//        }
+//    }
+
+//    @Test
+//    public void test () {
+//        try {
+//
+//        } finally {
+//
+//        }
+//    }
+//
+//    @Test
+//    public void test () {
+//        try {
+//
+//        } finally {
+//
+//        }
+//    }
 }
 

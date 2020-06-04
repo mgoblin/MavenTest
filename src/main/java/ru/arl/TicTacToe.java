@@ -11,11 +11,13 @@ public class TicTacToe {
     public static char[][] map;
     public static Scanner sc = new Scanner(System.in);
     public static Random rand = new Random();
+    public static char[][] mapArray;
 
 
     public static int getSIZE() {
         return SIZE;
     }
+
     public static void setSIZE(int SIZE) {
         TicTacToe.SIZE = SIZE;
     }
@@ -88,7 +90,7 @@ public class TicTacToe {
     }
 
     public static boolean isCellValid(int x, int y) {
-        if (x < 0 || x >= SIZE || y < 0 || y >= SIZE) return false;
+        if (x <= 0 || x >= SIZE || y <= 0 || y >= SIZE) return false;
         return map[y][x] == DOT_EMPTY;
     }
 
@@ -101,7 +103,7 @@ public class TicTacToe {
         }
     }
 
-    public static void printMap() {
+    public static void printMapArray() {
         for (int i = 0; i <= SIZE; i++) {
             System.out.print(i + " "); //печать горизонтальных чисел
         }
@@ -114,6 +116,23 @@ public class TicTacToe {
             System.out.println();
         }
         System.out.println();
+    }
+//    for (int i = 0; i <= SIZE; i++) {
+//            System.out.print(i + " "); //печать горизонтальных чисел
+//        }
+//        System.out.println();
+//        for (int i = 0; i < SIZE; i++) {
+//            System.out.print((i + 1) + " "); //печать вертикальных чисел
+//            for (int j = 0; j < SIZE; j++) {
+//                System.out.print(map[i][j] + " "); //печать инициализированных элементов массива
+//            }
+//            System.out.println();
+//        }
+//        System.out.println();
+//    }
+
+    public static void printMap() {
+
     }
 }
 
