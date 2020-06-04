@@ -27,7 +27,7 @@ public class TestTicTacToe {
     public void testIsCellValid() {
         try {
             setSIZE(3);
-            assertFalse(isCellValid(0, 0));
+            assertFalse(isCellValid(-1, -1));
         } finally {
             setSIZE(SIZE);
         }
@@ -144,15 +144,15 @@ public class TestTicTacToe {
         }
     }
 
+    @Test
+    public void testHumanTurn () {
+        try {
+            setSIZE(1);
+            initMap();
+        } finally {
 
-//    @Test
-//    public void test () {
-//        try {
-//
-//        } finally {
-//
-//        }
-//    }
+        }
+    }
 
 //    @Test
 //    public void test () {

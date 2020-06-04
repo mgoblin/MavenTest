@@ -12,19 +12,33 @@ public class TicTacToe {
     public static Scanner sc = new Scanner(System.in);
     public static Random rand = new Random();
     public static char[][] mapArray;
+    public static int lastX;
+    public static int lastY;
 
+    public static int getLastX() {
+        return lastX;
+    }
+    public static void setLastX(int lastX) {
+        TicTacToe.lastX = lastX;
+    }
+
+    public static int getLastY() {
+        return lastY;
+    }
+    public static void setLastY(int lastY) {
+        TicTacToe.lastY = lastY;
+    }
 
     public static int getSIZE() {
         return SIZE;
     }
-
     public static void setSIZE(int SIZE) {
         TicTacToe.SIZE = SIZE;
     }
 
 
     public static void main(String[] args) {
-        GameLogic.game(1);
+        GameLogic.game(2);
     }
 
     static boolean checkWin(char dot) { //проверка победы
@@ -90,7 +104,7 @@ public class TicTacToe {
     }
 
     public static boolean isCellValid(int x, int y) {
-        if (x <= 0 || x >= SIZE || y <= 0 || y >= SIZE) return false;
+        if (x < 0 || x >= SIZE || y < 0 || y >= SIZE) return false;
         return map[y][x] == DOT_EMPTY;
     }
 
@@ -103,7 +117,7 @@ public class TicTacToe {
         }
     }
 
-    public static void printMapArray() {
+    public static void printMap() {
         for (int i = 0; i <= SIZE; i++) {
             System.out.print(i + " "); //печать горизонтальных чисел
         }
@@ -116,23 +130,30 @@ public class TicTacToe {
             System.out.println();
         }
         System.out.println();
+//        printMapArray();
     }
-//    for (int i = 0; i <= SIZE; i++) {
-//            System.out.print(i + " "); //печать горизонтальных чисел
+
+//    public static void printMapArray() {
+//        mapArray = new char[SIZE + 1][SIZE + 1];
+//        for (char i = 0; i < SIZE; i++) {
+//            mapArray[0][i] = i; //направляющие числа по гор.
 //        }
-//        System.out.println();
-//        for (int i = 0; i < SIZE; i++) {
-//            System.out.print((i + 1) + " "); //печать вертикальных чисел
-//            for (int j = 0; j < SIZE; j++) {
-//                System.out.print(map[i][j] + " "); //печать инициализированных элементов массива
-//            }
-//            System.out.println();
+//        for (char i = 1; i < SIZE; i++) {
+//            mapArray[i][0] = i; //направляющие числа по верт.
 //        }
-//        System.out.println();
+//        for (int i = 1; i < SIZE; i++) {
+//            for (int j = 1; j < SIZE; j++) {
+//                mapArray[i][j] = map[i - 1][j - 1];
+//            } //копируем элементы массива map
+//        }
 //    }
-
-    public static void printMap() {
-
-    }
+//
+//    public static void print() {
+//        for (int i = 0; i < SIZE; i++) {
+//            for (int j = 0; j < SIZE; j++) {
+//                System.out.println(mapArray[i][j]);
+//            }
+//        }
+//    }
 }
 
