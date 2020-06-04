@@ -83,14 +83,21 @@ public class TicTacToe {
         return true;
     }
 
-    public static void aiTurn() {
-        int x, y;
-        do {
-            x = rand.nextInt(SIZE);
-            y = rand.nextInt(SIZE);
-        } while (!isCellValid(x, y));
-        System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
-        map[y][x] = DOT_O;
+    public static boolean aiTurn(int x1, int y1) {
+        if(isCellValid(x1, y1)) {
+            System.out.println("Компьютер походил в точку " + (x1 + 1) + " " + (y1 + 1));
+            map[y1][x1] = DOT_O;
+            return true;
+        } else {
+            return false;
+        }
+//        int x, y;
+//        do {
+//            x = rand.nextInt(SIZE);
+//            y = rand.nextInt(SIZE);
+//        } while (!isCellValid(x, y));
+//        System.out.println("Компьютер походил в точку " + (x + 1) + " " + (y + 1));
+//        map[y][x] = DOT_O;
     }
 
     public static void humanTurn() {

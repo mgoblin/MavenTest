@@ -18,7 +18,14 @@ public class GameLogic {
                 System.out.println("Ничья");
                 break;
             }
-            aiTurn();
+
+            int x = rand.nextInt(SIZE);
+            int y = rand.nextInt(SIZE);
+            while (aiTurn(x, y)){
+                x = rand.nextInt(SIZE);
+                y = rand.nextInt(SIZE);
+            }
+
             printMap();
             if (checkWin(DOT_O)) {
                 System.out.println("Победил Искуственный Интеллект");
