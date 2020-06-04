@@ -19,11 +19,11 @@ public class GameLogic {
                 break;
             }
 
-            int x = rand.nextInt(SIZE);
-            int y = rand.nextInt(SIZE);
+            int x = rand.nextInt(getSIZE());
+            int y = rand.nextInt(getSIZE());
             while (aiTurn(x, y)){
-                x = rand.nextInt(SIZE);
-                y = rand.nextInt(SIZE);
+                x = rand.nextInt(getSIZE());
+                y = rand.nextInt(getSIZE());
             }
 
             printMap();
